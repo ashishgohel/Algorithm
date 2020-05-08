@@ -10,16 +10,15 @@ public class ContiguousCheckAlgo {
 
     public static void main(String[] args) {
 
-        List<Integer> intArr = Arrays.asList(1, 3, 2, 4, 5, 7, 6, 6);
+        List<Integer> intArr = Arrays.asList(1, 3, 2, 4, 5, 7, 6, 8);
         Integer result[] = new Integer[intArr.size()];
-        int maxValue = 0;
+
         int minValue = intArr.get(0);
 
-        for (int i = 0; i < intArr.size(); i++) {
-            maxValue = Integer.max(maxValue,intArr.get(i));
+        for (int i = 0; i < intArr.size(); i++)
             minValue = Integer.min(minValue,intArr.get(i));
-        }
-        System.out.println("Max="+maxValue+" :: Min="+minValue);
+
+        System.out.println("Min="+minValue);
 
         for (int value: intArr) {
             int position = value - minValue; // This determines the range and it will fall under the size of the result
